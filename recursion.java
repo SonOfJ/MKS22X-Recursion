@@ -1,13 +1,13 @@
 public class recursion{
-    /*You may write additional private methods */
-
-    /*Recursively find the sqrt using Newton's approximation
-     *tolerance is the allowed percent error the squared answer is away from n.
-     *precondition: n is non-negative
-
-    */
-    public static double sqrt(double n, double tolerance){
-
+    public static double sqrt(double n, double tolerance) {
+      return better(n, n / 2, tolerance);
+    }
+    private static double better(double n, double guess, double tolerance) { //Function to return an accurate guess.
+      if (Math.abs(guess * guess - n) / n < tolerance) { //Is it tolerable?
+        return guess;
+      } else {
+        return better(n, (n / guess + guess) / 2); //Try a better guess.
+      }
     }
 
     /*Recursively find the n'th fibbonaci number in linear time
@@ -16,12 +16,12 @@ public class recursion{
      *fib(5) = 5
      *precondition: n is non-negative
      */
-    public static int fib(int n){
+    public static int fib(int n) {
 
     }
 
     /*As Per classwork*/
-    public static ArrayList<Integer> makeAllSums(int n){
+    public static ArrayList<Integer> makeAllSums(int n) {
     }
 
 }
