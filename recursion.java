@@ -9,13 +9,6 @@ public class recursion{
         return better(n, (n / guess + guess) / 2); //Try a better guess.
       }
     }
-
-    /*Recursively find the n'th fibbonaci number in linear time
-     *fib(0) = 0
-     *fib(1) = 1
-     *fib(5) = 5
-     *precondition: n is non-negative
-     */
     public static int fib(int n) {
       return fiber(n, 0); //Extra parameter to keep track of total sum.
     }
@@ -26,8 +19,9 @@ public class recursion{
         return fiber(n - 1, sum + n); //Move onto the previous number while adding the current number.
       }
     }
-    /*As Per classwork*/
     public static ArrayList<Integer> makeAllSums(int n) {
+      ArrayList<Integer> list = new ArrayList<Integer>();
+      return maker(int n, list, 0); //Calls for the helper.
     }
 
 }
