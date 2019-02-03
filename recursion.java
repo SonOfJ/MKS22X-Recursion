@@ -17,9 +17,11 @@ public class recursion{
      *precondition: n is non-negative
      */
     public static int fib(int n) {
-
+      return fiber(n, 0); //Extra parameter to keep track of total sum.
     }
-
+    private static int fiber(int n, int sum) {
+      if ()
+    }
     /*As Per classwork*/
     public static ArrayList<Integer> makeAllSums(int n) {
     }
