@@ -20,10 +20,10 @@ public class recursion{
       return fiber(n, 0); //Extra parameter to keep track of total sum.
     }
     private static int fiber(int n, int sum) {
-      if (n < 2) {
-        return n;
+      if (n < 2) { //If n is either 1 or 0;
+        return sum + 1; //Return the sum plus 1;
       } else {
-        return fiber(n - 1, sum + n);
+        return fiber(n - 1, sum + n); //Move onto the previous number while adding the current number.
       }
     }
     /*As Per classwork*/
