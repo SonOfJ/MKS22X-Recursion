@@ -1,18 +1,22 @@
+import java.util.ArrayList;
 public class recursion{
     public static double sqrt(double n, double tolerance) {
       if (n < 0) {
         throw new IllegalArgumentException("Please input a positive double.");
       }
-      return better(n, n / 2, tolerance);
+      return better(n, n / 2, tolerance / 100.0); //Tolerance is a double so it should be divided by a double.
     }
     private static double better(double n, double guess, double tolerance) { //Function to return an accurate guess.
-      if (Math.abs(guess * guess - n) / n < tolerance) { //Is it tolerable?
+      if (Math.abs(guess * guess - n) / n <= tolerance) { //Is it tolerable?
         return guess;
       } else {
         return better(n, (n / guess + guess) / 2); //Try a better guess.
       }
     }
     public static int fib(int n) {
+      if (n < 0) {
+        throw new IllegalArgumentException("Please input a positive double.");
+      }
       return fiber(n, 0); //Extra parameter to keep track of total sum.
     }
     private static int fiber(int n, int sum) {
@@ -23,6 +27,9 @@ public class recursion{
       }
     }
     public static ArrayList<Integer> makeAllSums(int n) {
+      if (n < 0) {
+        throw new IllegalArgumentException("Please input a positive double.");
+      }
       ArrayList<Integer> list = new ArrayList<Integer>();
       return maker(int n, list, 0); //Calls for the helper.
     }
