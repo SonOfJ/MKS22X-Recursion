@@ -20,7 +20,11 @@ public class recursion{
       return fiber(n, 0); //Extra parameter to keep track of total sum.
     }
     private static int fiber(int n, int sum) {
-      if ()
+      if (n < 2) {
+        return n;
+      } else {
+        return fiber(n - 1, sum + n);
+      }
     }
     /*As Per classwork*/
     public static ArrayList<Integer> makeAllSums(int n) {
