@@ -1,8 +1,11 @@
 import java.util.ArrayList;
 public class recursion{
     public static double sqrt(double n, double tolerance) {
-      if (n < 0) {
-        throw new IllegalArgumentException("Please input a positive double.");
+      if (n < 0 || tolerance < 0) {
+        throw new IllegalArgumentException("Both arguments cannot be negative.");
+      }
+      if (tolerance > 100) {
+        throw new IllegalArgumentException("The tolerance cannot be more than 100.");
       }
       return better(n, n / 2, tolerance / 100.0); //Tolerance is a double so it should be divided by a double.
     }
@@ -15,7 +18,7 @@ public class recursion{
     }
     public static int fib(int n) {
       if (n < 0) {
-        throw new IllegalArgumentException("Please input a positive double.");
+        throw new IllegalArgumentException("Please input a nonnegative integer.");
       }
       return fiber(n, 0); //Extra parameter to keep track of total sum.
     }
@@ -28,7 +31,7 @@ public class recursion{
     }
     public static ArrayList<Integer> makeAllSums(int n) {
       if (n < 0) {
-        throw new IllegalArgumentException("Please input a positive double.");
+        throw new IllegalArgumentException("Please input a nonnegative integer.");
       }
       ArrayList<Integer> list = new ArrayList<Integer>();
       return maker(int n, list, 0); //Calls for the helper.
@@ -42,7 +45,7 @@ public class recursion{
       }
     }
     public static void main(String[] args) {
-      System.out.println(sqrt(100, 0.0001)); //Should return 10.
-      System.out.println(sqrt())
+      System.out.println(sqrt(100, 10)); //Should return 10.
+      System.out.println(sqrt(0, 5))
     }
 }
