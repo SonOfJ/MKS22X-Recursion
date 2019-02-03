@@ -1,5 +1,8 @@
 public class recursion{
     public static double sqrt(double n, double tolerance) {
+      if (n < 0) {
+        throw new IllegalArgumentException("Please input a positive double.");
+      }
       return better(n, n / 2, tolerance);
     }
     private static double better(double n, double guess, double tolerance) { //Function to return an accurate guess.
@@ -31,5 +34,8 @@ public class recursion{
         maker(n - 1, list, sum); //Don't add the value.
       }
     }
-
+    public static void main(String[] args) {
+      System.out.println(sqrt(100, 0.0001)); //Should return 10.
+      System.out.println(sqrt())
+    }
 }
