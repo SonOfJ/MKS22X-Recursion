@@ -44,7 +44,7 @@ public class recursion{
       if (n < 1) {
         list.add(sum);
       } else{
-        maker(n - 1, list, sum + 1); //Add the value.
+        maker(n - 1, list, sum + n); //Add the value.
         maker(n - 1, list, sum); //Don't add the value.
       }
     }
@@ -57,10 +57,10 @@ public class recursion{
       System.out.println(fib(7)); //Should return 13.
       System.out.println(fib(0)); //Should return 0.
       System.out.println(fib(1)); //Should return 1.
-      System.out.println(fib(-7)); //Should return error message.
-      System.out.println(fib(50)); //Testing the speed.
-      System.out.println(makeAllSums(5)); //Should return a list of all possible sums.
+      //System.out.println(fib(-7)); //Should return error message.
+      System.out.println(fib(30)); //Testing the speed.
+      System.out.println(makeAllSums(3)); //Should return a list of all possible sums.
       System.out.println(makeAllSums(6)); //Should return a list of all possible sums.
-      System.out.println(makeAllSums(-7)); //Should return a list of all possible sums.
+      //System.out.println(makeAllSums(-7)); //Should return a list of all possible sums.
     }
 }
