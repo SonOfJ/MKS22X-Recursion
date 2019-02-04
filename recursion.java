@@ -13,7 +13,7 @@ public class recursion{
       if (Math.abs(guess * guess - n) / n <= tolerance) { //Is it tolerable?
         return guess;
       } else {
-        return better(n, (n / guess + guess) / 2); //Try a better guess.
+        return better(n, (n / guess + guess) / 2, tolerance); //Try a better guess.
       }
     }
     public static int fib(int n) {
