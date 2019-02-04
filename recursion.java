@@ -34,7 +34,8 @@ public class recursion{
         throw new IllegalArgumentException("Please input a nonnegative integer.");
       }
       ArrayList<Integer> list = new ArrayList<Integer>();
-      return maker(n, list, 0); //Calls for the helper.
+      maker(n, list, 0); //Calls for the helper.
+      return list;
     }
     private static void maker(int n, ArrayList<Integer> list, int sum) { //n serves as a counter and the sum parameter is the answer that will be added to the list.
       if (n < 1) {
