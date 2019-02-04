@@ -23,8 +23,8 @@ public class recursion{
       return fiber(n, 0); //Extra parameter to keep track of total sum.
     }
     private static int fiber(int n, int sum) {
-      if (n < 2) { //If n is either 1 or 0.
-        return sum + 1; //Return the sum plus 1.
+      if (n == 0) { //Base case.
+        return sum;
       } else {
         return fiber(n - 1, sum + n); //Move onto the previous number while adding the current number.
       }
@@ -46,6 +46,11 @@ public class recursion{
     }
     public static void main(String[] args) {
       System.out.println(sqrt(100, 10)); //Should return 10.
-      System.out.println(sqrt(0, 5))
+      System.out.println(sqrt(0, 5)); //Should return 0.
+      System.out.println(sqrt(0, 101)); //Should return error message.
+      System.out.println(sqrt(-12, 5)); //Should return error message.
+      System.out.println(sqrt(0, -100)); //Should return error message.
+      System.out.println(sqrt(70.2, 1)) //Should return something fairly close to 8.38.
+      System.out.println(fib(7)) //Should return 0.
     }
 }
