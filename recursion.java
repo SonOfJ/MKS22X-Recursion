@@ -20,13 +20,16 @@ public class recursion{
       if (n < 0) {
         throw new IllegalArgumentException("Please input a nonnegative integer.");
       }
-      return fiber(n, 0); //Extra parameter to keep track of total sum.
+      return fiber(n, 0, 1); //Add two extra parameters: the first two terms in the sequence.
     }
-    private static int fiber(int n, int sum) {
-      if (n == 0) { //Base case.
+    private static int fiber(int n, int previous, int sum) {
+      if (n == 0) { //First base case.
+        return previous;
+      }
+      if (n == 1) { //Second base case.
         return sum;
       } else {
-        return fiber(n - 1, sum + n); //Move onto the previous number while adding the current number.
+        return fiber(n - 1, sum, sum + previous); //Move on while adding the previous number.
       }
     }
     public static ArrayList<Integer> makeAllSums(int n) {
@@ -46,10 +49,10 @@ public class recursion{
       }
     }
     public static void main(String[] args) {
-      System.out.println(sqrt(100, 10)); //Should return 10.
-      System.out.println(sqrt(5, 101)); //Should return error message.
-      System.out.println(sqrt(-12, 5)); //Should return error message.
-      System.out.println(sqrt(5, -100)); //Should return error message.
+      System.out.println(sqrt(100, 10)); //Should return some thing close to 10.
+      //System.out.println(sqrt(5, 101)); //Should return error message.
+      //System.out.println(sqrt(-12, 5)); //Should return error message.
+      //System.out.println(sqrt(5, -100)); //Should return error message.
       System.out.println(sqrt(70.2, 1)); //Should return something fairly close to 8.38.
       System.out.println(fib(7)); //Should return 13.
       System.out.println(fib(0)); //Should return 0.
