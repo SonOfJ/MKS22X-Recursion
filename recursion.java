@@ -50,7 +50,14 @@ public class recursion{
       System.out.println(sqrt(0, 101)); //Should return error message.
       System.out.println(sqrt(-12, 5)); //Should return error message.
       System.out.println(sqrt(0, -100)); //Should return error message.
-      System.out.println(sqrt(70.2, 1)) //Should return something fairly close to 8.38.
-      System.out.println(fib(7)) //Should return 0.
+      System.out.println(sqrt(70.2, 1)); //Should return something fairly close to 8.38.
+      System.out.println(fib(7)); //Should return 13.
+      System.out.println(fib(0)); //Should return 0.
+      System.out.println(fib(1)); //Should return 1.
+      System.out.println(fib(-7)); //Should return error message.
+      System.out.println(fib(50)); //Testing the speed.
+      System.out.println(makeAllSums(5)); //Should return a list of all possible sums.
+      System.out.println(makeAllSums(6)); //Should return a list of all possible sums.
+      System.out.println(makeAllSums(-7)); //Should return a list of all possible sums.
     }
 }
