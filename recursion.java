@@ -1,11 +1,11 @@
 import java.util.ArrayList;
 public class recursion{
     public static double sqrt(double n, double tolerance) {
-      if (n < 0 || tolerance < 0) {
-        throw new IllegalArgumentException("Both arguments cannot be negative.");
+      if (n <= 0) {
+        throw new IllegalArgumentException("The input has to be positive.");
       }
-      if (tolerance > 100) {
-        throw new IllegalArgumentException("The tolerance cannot be more than 100.");
+      if (tolerance > 100 || tolerance <= 0) {
+        throw new IllegalArgumentException("The tolerance has to be between 0 (exclusive) and 100 (inclusive).");
       }
       return better(n, n / 2, tolerance / 100.0); //Tolerance is a double so it should be divided by a double.
     }
@@ -47,10 +47,9 @@ public class recursion{
     }
     public static void main(String[] args) {
       System.out.println(sqrt(100, 10)); //Should return 10.
-      System.out.println(sqrt(0, 5)); //Should return 0.
-      System.out.println(sqrt(0, 101)); //Should return error message.
+      System.out.println(sqrt(5, 101)); //Should return error message.
       System.out.println(sqrt(-12, 5)); //Should return error message.
-      System.out.println(sqrt(0, -100)); //Should return error message.
+      System.out.println(sqrt(5, -100)); //Should return error message.
       System.out.println(sqrt(70.2, 1)); //Should return something fairly close to 8.38.
       System.out.println(fib(7)); //Should return 13.
       System.out.println(fib(0)); //Should return 0.
