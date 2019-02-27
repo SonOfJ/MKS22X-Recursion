@@ -1,6 +1,9 @@
 import java.util.ArrayList;
 public class recursion{
     public static double sqrt(double n, double tolerance) {
+      if (n == 0) {
+        return n;
+      }
       if (n <= 0) {
         throw new IllegalArgumentException("The input has to be positive.");
       }
